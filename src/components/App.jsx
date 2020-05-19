@@ -13,13 +13,21 @@ const [notes , setNotes] = useState([]);
 function addNote(note) {
 setNotes(
   (prev) => {
-    return ([...prev,
-     {
-      title : note.title,
-      content : note.content,
-    }]
+if (note.title !== "" && note.content !== "") {
+  return ([...prev,
+   {
+    title : note.title,
+    content : note.content,
+  }]
 
-    )})}
+  )
+} else {
+  return ([...prev,]
+  )
+}
+
+
+  })}
 
 
 function deleteNote(id) {
